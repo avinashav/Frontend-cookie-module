@@ -1,4 +1,4 @@
-<button class="btn btn-outline-success" (click)="SortedTableContentsAPICall()">Click-Me</button>
+<button class="btn btn-outline-success" (click)="TableContentsAPICall()">Click-Me</button>
 
 <div *ngIf="response">
     <table class="table table-hover">
@@ -27,7 +27,8 @@
           <td>{{element.datetime}}</td>
           <td>
                <div id="demo"
-                    [ngStyle]= "{ 'background-color' : (element.status == 'Completed') ? 'green' : 'red' }">
+                    [ngStyle]= "{ 'background-color' : (element.status == 'Completed') ? 'green' :
+                        (element.status == 'Scan Error') ? 'red' : 'blue' }">
                     {{element.status}} 
                 </div>
           </td>
